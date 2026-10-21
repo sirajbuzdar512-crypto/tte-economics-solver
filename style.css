@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    color: #334155;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 900px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.app-header {
+    background-color: #0b2545;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 20px;
+    border-bottom: 4px solid #134074;
+}
+
+.brand-logo {
+    max-width: 80px;
+    margin-bottom: 12px;
+}
+
+.app-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.app-header p {
+    font-size: 13px;
+    color: #cbd5e1;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.solver-interface {
+    padding: 24px;
+}
+
+.method-selector {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.selector-btn {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.selector-btn.active {
+    background-color: #0b2545;
+    color: #ffffff;
+    border-color: #0b2545;
+}
+
+.input-wrapper {
+    margin-top: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.2s;
+}
+
+textarea:focus {
+    border-color: #134074;
+}
+
+.btn-process {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    background-color: #1e562a;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-process:hover {
+    background-color: #153e1e;
+}
+
+.output-container {
+    padding: 0 24px 24px 24px;
+}
+
+.output-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e562a;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.output-box {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 20px;
+    min-height: 120px;
+}
