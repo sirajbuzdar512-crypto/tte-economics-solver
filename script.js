@@ -8,10 +8,10 @@ window.TTE_Economics_Engine = (function() {
                 outBox.innerHTML = "<p style='color: #1e562a; font-weight: bold;'>⏳ Engine is processing your economics request... Please wait...</p>";
             }
 
-            // ⚠️ INSERT YOUR GOOGLE GEMINI API KEY HERE
-            const API_KEY = "YOUR_GEMINI_API_KEY_HERE"; 
-            
-            // Standard dynamic base endpoint
+            // ⚠️ PASTE YOUR COPIED AIzaSy... KEY INSIDE THE QUOTATION MARKS BELOW
+const API_KEY = "AQ.Ab8RN6KGsJqG94iJE9V4LlN4oBgMy3BYH78vrE_Ph9rFhrUcUA";
+
+            // Standard official generative language API endpoint
             const url = `https://googleapis.com{API_KEY}`;
 
             const systemPrompt = "You are an expert Economics, Islamic Banking, Business Finance, and International Trade professor. " +
@@ -23,7 +23,9 @@ window.TTE_Economics_Engine = (function() {
             try {
                 const response = await fetch(url, {
                     method: "POST",
-                    headers: { "Content-Type": "application/json" },
+                    headers: { 
+                        "Content-Type": "application/json"
+                    },
                     body: JSON.stringify({
                         contents: [{ 
                             parts: [{ 
@@ -40,8 +42,13 @@ window.TTE_Economics_Engine = (function() {
                     return;
                 }
 
-                const aiResponse = data.candidates[0].content.parts[0].text;
-                this.renderOutput("TTE Economics Engine Resolution", "Analytical Reference Data", aiResponse);
+                if (data.candidates && data.candidates[0].content && data.candidates[0].content.parts) {
+                    const aiResponse = data.candidates[0].content.parts[0].text;
+                    this.renderOutput("TTE Economics Engine Resolution", "Analytical Reference Data", aiResponse);
+                } else {
+                    this.renderOutput("Parsing Error", "Response Format Error", "Received unexpected data format from the core engine node.");
+                }
+
             } catch (error) {
                 console.error("Connection Error:", error);
                 this.renderOutput("System Connection Timeout", "Error Processing Request", "Could not connect to the global analytical nodes. Please check your API key configuration or network connection.");
