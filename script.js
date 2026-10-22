@@ -8,14 +8,8 @@ window.TTE_Economics_Engine = (function() {
                 outBox.innerHTML = "<p style='color: #1e562a; font-weight: bold;'>⏳ Engine is processing your economics request...</p>";
             }
 
-            // Split the key properly into two parts to bypass GitHub scanning
-            const keyPart1 = "AQ.Ab8RN6KGsJqG94iJE9V4L1N4oBgMy3BYH78v";
-            const keyPart2 = "rE_Ph9rFhrUcUA";
-            const API_KEY = keyPart1 + keyPart2;
-            
-            const url = `https://googleapis.com{API_KEY}`;
-
-            const url = `https://googleapis.com{API_KEY}`;
+            // Free & Open-Source AI Endpoint (No API Key Required)
+            const url = `https://pollinations.ai`;
 
             const systemPrompt = "You are an expert Economics, Islamic Banking, Business Finance, and International Finance AI engine. " +
                                  "Answer this question comprehensively with structural steps, examples, or numerical calculation steps. " +
@@ -30,21 +24,16 @@ window.TTE_Economics_Engine = (function() {
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
-                        contents: [{
-                            parts: [{ text: systemPrompt + "\n\nUser Question: " + userInput }]
-                        }]
+                        messages: [
+                            { role: "system", content: systemPrompt },
+                            { role: "user", content: userInput }
+                        ]
                     })
                 });
 
-                const data = await response.json();
+                const aiResponse = await response.text();
 
-                if (data.error) {
-                    this.renderOutput("API Configuration Error", "Configuration Issue", `<strong>System Error:</strong> ${data.error.message}`);
-                    return;
-                }
-
-                if (data.candidates && data.candidates.content && data.candidates.content.parts && data.candidates.content.parts.text) {
-                    const aiResponse = data.candidates.content.parts.text;
+                if (aiResponse && aiResponse.trim() !== "") {
                     this.renderOutput("TTE Economics Engine Resolution", "Analytical Reference Data", aiResponse);
                 } else {
                     this.renderOutput("Parsing Error", "Response Format Error", "Received unexpected response format structure from the analytical nodes.");
@@ -52,7 +41,7 @@ window.TTE_Economics_Engine = (function() {
 
             } catch (error) {
                 console.error("Fetch error:", error);
-                this.renderOutput("System Connection Timeout", "Error Processing Request", "Could not connect to the global analytical nodes. Please check your API key configuration or network connection.");
+                this.renderOutput("System Connection Timeout", "Error Processing Request", "Could not connect to the global analytical nodes. Please check your network connection.");
             }
         },
 
