@@ -1,135 +1,23 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-    background-color: #f1f5f9;
-    color: #334155;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.app-container {
-    width: 100%;
-    max-width: 900px;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-}
-
-.app-header {
-    background-color: #0b2545;
-    color: #ffffff;
-    text-align: center;
-    padding: 30px 20px;
-    border-bottom: 4px solid #134074;
-}
-
-.brand-logo {
-    max-width: 80px;
-    margin-bottom: 12px;
-}
-
-.app-header h1 {
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}
-
-.app-header p {
-    font-size: 13px;
-    color: #cbd5e1;
-    margin-top: 5px;
-    font-style: italic;
-}
-
-.solver-interface {
-    padding: 24px;
-}
-
-.method-selector {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 20px;
-}
-
-.selector-btn {
-    flex: 1;
-    padding: 12px;
-    border: 1px solid #cbd5e1;
-    background: #ffffff;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.selector-btn.active {
-    background-color: #0b2545;
-    color: #ffffff;
-    border-color: #0b2545;
-}
-
-.input-wrapper {
-    margin-top: 10px;
-}
-
-textarea {
-    width: 100%;
-    height: 150px;
-    padding: 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 4px;
-    resize: vertical;
-    font-size: 14px;
-    outline: none;
-    transition: border 0.2s;
-}
-
-textarea:focus {
-    border-color: #134074;
-}
-
-.btn-process {
-    width: 100%;
-    padding: 15px;
-    margin-top: 15px;
-    background-color: #1e562a;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.btn-process:hover {
-    background-color: #153e1e;
-}
-
-.output-container {
-    padding: 0 24px 24px 24px;
-}
-
-.output-title {
-    font-size: 14px;
-    font-weight: 700;
-    color: #1e562a;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.output-box {
-    background-color: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 4px;
-    padding: 20px;
-    min-height: 120px;
-}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{font-family:Segoe UI,Arial,sans-serif;background:#eef2f6;color:#1b2a3a;padding:clamp(8px,2vw,28px)}
+.wrap{width:100%;max-width:900px;margin:0 auto;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.12)}
+header{background:#0b2a4a;color:#fff;text-align:center;padding:clamp(16px,4vw,28px) 14px;border-bottom:6px solid #1f5fa8}
+header h1{margin:0 0 6px;font-size:clamp(20px,5vw,30px);letter-spacing:.5px;line-height:1.2}
+header div{font-size:clamp(12px,3vw,16px)}
+header a{color:#4db3ff}
+main{padding:clamp(14px,4vw,28px)}
+textarea{width:100%;min-height:clamp(110px,22vh,170px);padding:14px;font-size:clamp(15px,3.6vw,17px);border:1px solid #cfd8e3;border-radius:8px;resize:vertical;font-family:inherit}
+textarea:focus{outline:2px solid #1f5fa8;border-color:#1f5fa8}
+.actions{display:flex;gap:10px;margin-top:14px}
+button{padding:15px;font-size:clamp(15px,3.8vw,18px);font-weight:600;color:#fff;border:0;border-radius:8px;cursor:pointer;font-family:inherit}
+#btn{flex:1;background:#1b5e20}
+#btn:disabled{background:#6b8f6e;cursor:wait}
+#clr{background:#546e7a;padding:15px 20px}
+h3{color:#1b5e20;margin:22px 0 10px;font-size:clamp(16px,4vw,20px)}
+#out{background:#f8fafc;border:1px solid #e0e6ed;border-radius:8px;padding:clamp(12px,3vw,20px);line-height:1.7;min-height:80px;overflow-wrap:anywhere;font-size:clamp(14px,3.6vw,16px)}
+#out h4{color:#0b2a4a;margin:16px 0 6px;font-size:clamp(16px,4vw,18px)}
+#out code{background:#e8eef5;padding:2px 6px;border-radius:4px}
+.err{border-left:5px solid #c62828;background:#fdecea;padding:12px 16px;color:#7f1d1d;border-radius:4px}
+footer{text-align:center;font-size:12px;color:#456;padding:0 14px 20px}
+footer a{color:#1b5e20}
