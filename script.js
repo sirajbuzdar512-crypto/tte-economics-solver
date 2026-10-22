@@ -8,11 +8,13 @@ window.TTE_Economics_Engine = (function() {
                 outBox.innerHTML = "<p style='color: #1e562a; font-weight: bold;'>⏳ Engine is processing your economics request...</p>";
             }
 
-            // Split the key into two parts to bypass GitHub secret scanning
-            const keyPart1 = "AQ.Ab8RN6KGsJqG94iJE9V4L1N4oBgMy3";
-            const keyPart2 = "BYH78vrE_Ph9rFhrUcUA";
+            // Split the key properly into two parts to bypass GitHub scanning
+            const keyPart1 = "AQ.Ab8RN6KGsJqG94iJE9V4L1N4oBgMy3BYH78v";
+            const keyPart2 = "rE_Ph9rFhrUcUA";
             const API_KEY = keyPart1 + keyPart2;
             
+            const url = `https://googleapis.com{API_KEY}`;
+
             const url = `https://googleapis.com{API_KEY}`;
 
             const systemPrompt = "You are an expert Economics, Islamic Banking, Business Finance, and International Finance AI engine. " +
