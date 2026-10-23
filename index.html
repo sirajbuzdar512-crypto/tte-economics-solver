@@ -2,26 +2,29 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>TTE Economics Numerical Solver</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <h1>TTE ECONOMICS NUMERICAL SOLVER</h1>
-    <div>POWERED BY <a href="https://techandtipseconomy.com" target="_blank" rel="noopener">TECH AND TIPS ECONOMY</a></div>
-  </header>
-  <main>
-    <textarea id="q" placeholder="Type any economics question, theory or numerical (demand, elasticity, GDP, multiplier, cost, market structures...)"></textarea>
-    <div class="actions">
-      <button id="btn" onclick="solve()">Process Question &amp; Generate Analytical Resolution</button>
-      <button id="clr" onclick="clearAll()" title="Clear">Clear</button>
-    </div>
-    <h3>OUTPUT RESULT</h3>
-    <div id="out">Your answer will appear here.</div>
-  </main>
-  <footer>PLATFORM ENGINE SECURITY ARCHITECTURE &bull; POWERED BY <a href="https://techandtipseconomy.com" target="_blank" rel="noopener">TECH AND TIPS ECONOMY</a></footer>
+<div class="w">
+<header>
+<div class="lg"><img src="logo.png" alt="TTE logo" onerror="this.parentNode.style.display='none'"></div>
+<h1>TTE ECONOMICS NUMERICAL SOLVER</h1>
+<div class="by">POWERED BY <a href="https://techandtipseconomy.com" target="_blank" rel="noopener">TECH AND TIPS ECONOMY</a></div>
+</header>
+<main>
+<div class="g">
+<div><label for="cat">1. Choose the branch</label><select id="cat" onchange="fillTopics()"></select></div>
+<div><label for="top">2. Choose the topic</label><select id="top" onchange="hint();document.getElementById('out').innerHTML=''"></select></div>
+</div>
+<div class="hint" id="hint"></div>
+<label for="q">3. Type your numerical question</label>
+<textarea id="q" placeholder="Type or paste your numerical question here, with all its numbers."></textarea>
+<div class="r"><button class="m" onclick="go()">Solve Step by Step</button><button class="s2" onclick="cp()">Copy solution</button></div>
+<div id="out"></div>
+</main>
+<footer>PLATFORM ENGINE SECURITY ARCHITECTURE &bull; POWERED BY <a href="https://techandtipseconomy.com" target="_blank" rel="noopener">TECH AND TIPS ECONOMY</a></footer>
 </div>
 <script src="script.js"></script>
 </body>
